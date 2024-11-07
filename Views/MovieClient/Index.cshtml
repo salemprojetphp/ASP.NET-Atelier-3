@@ -1,0 +1,37 @@
+﻿<h1>Movies</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var movie in Model.Movies)
+        {
+            <tr>
+                <td>@movie.Id</td>
+                <td>@movie.Title</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<h1>Clients</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var client in Model.Clients)
+        {
+            <tr>
+                <td>@client.Id</td>
+                <td>@client.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

@@ -1,0 +1,10 @@
+[
+    {
+    "GenreId": 1,
+    "Name": "GenreFromJsonFile1"
+    },
+    {
+    "GenreId": 2,
+    "Name": "GenreFromJsonFile2"
+    }
+]
