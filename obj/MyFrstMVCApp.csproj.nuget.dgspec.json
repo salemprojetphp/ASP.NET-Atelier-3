@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ADEL\\Desktop\\GL3\\.NET\\MyFrstMVCApp\\MyFrstMVCApp.csproj": {}
+    "C:\\Users\\21654\\OneDrive\\Desktop\\All .NET\\ASP.NET-Atelier-3\\MyFrstMVCApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ADEL\\Desktop\\GL3\\.NET\\MyFrstMVCApp\\MyFrstMVCApp.csproj": {
+    "C:\\Users\\21654\\OneDrive\\Desktop\\All .NET\\ASP.NET-Atelier-3\\MyFrstMVCApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ADEL\\Desktop\\GL3\\.NET\\MyFrstMVCApp\\MyFrstMVCApp.csproj",
+        "projectUniqueName": "C:\\Users\\21654\\OneDrive\\Desktop\\All .NET\\ASP.NET-Atelier-3\\MyFrstMVCApp.csproj",
         "projectName": "MyFrstMVCApp",
-        "projectPath": "C:\\Users\\ADEL\\Desktop\\GL3\\.NET\\MyFrstMVCApp\\MyFrstMVCApp.csproj",
-        "packagesPath": "C:\\Users\\ADEL\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ADEL\\Desktop\\GL3\\.NET\\MyFrstMVCApp\\obj\\",
+        "projectPath": "C:\\Users\\21654\\OneDrive\\Desktop\\All .NET\\ASP.NET-Atelier-3\\MyFrstMVCApp.csproj",
+        "packagesPath": "C:\\Users\\21654\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\21654\\OneDrive\\Desktop\\All .NET\\ASP.NET-Atelier-3\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ADEL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\21654\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -88,7 +92,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,31 +1,24 @@
 using Microsoft.AspNetCore.Mvc;
 using MyFrstMVCApp.Models;
-
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
 namespace MyApp.Namespace
 {
     public class MovieController : Controller
     {
         private readonly ApplicationDbContext _db;
-        public MovieController(ApplicationDbContext db)
+        private readonly IWebHostEnvironment _webHostingEnvironment;
+        public MovieController(ApplicationDbContext db, IWebHostEnvironment webHostingEnvironment)
         {
             _db = db;
+            _webHostingEnvironment = webHostingEnvironment;
         }
         public ActionResult Index()
         {
-            var movies=_db.Movies.ToList();
+            var movies=_db.Movies.Include(m => m.Genre).ToList();
             return View(movies);
-        }
-        private List<Movie> GetAllMovies(){
-            return new List<Movie>{
-                new Movie{Id=1, Title="The Godfather"},
-                new Movie{Id=2, Title="The Dark Knight"},
-                new Movie{Id=3, Title="Inception"},
-                new Movie{Id=4, Title="The Matrix"},
-                new Movie{Id=5, Title="Interstellar"},
-                new Movie{Id=6, Title="The Lion King"},
-            };
-
         }
         //GET: Affiche le formulaire de création
         public IActionResult Create()
@@ -36,14 +29,21 @@ namespace MyApp.Namespace
         //POST: Crée un film
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(Movie movie)
+        public IActionResult Create(Movie movie, IFormFile photo)
         {
-            if(ModelState.IsValid){
-                _db.Movies.Add(movie);
-                _db.SaveChanges();
-                return RedirectToAction("Index");
+            if(!ModelState.IsValid){
+                return View(movie);
             }
-            return View(movie);
+
+            if(photo != null) {
+                var fileName = Path.Combine(_webHostingEnvironment.WebRootPath, "images", Path.GetFileName(photo.FileName));
+                photo.CopyTo(new FileStream(fileName, FileMode.Create));
+                movie.photo = "images/" + photo.FileName;
+            }
+
+            _db.Movies.Add(movie);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
        //GET: Trouve un film

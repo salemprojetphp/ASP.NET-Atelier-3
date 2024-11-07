@@ -10,12 +10,17 @@
 @model IEnumerable<MyFrstMVCApp.Models.Movie> 
 
 <h2>Liste des films</h2>
+<a asp-controller="Movie" asp-action="Create" class= "btn btn-primary">Add New Movie</a>
 
 <table class="table">
     <thead>
         <tr>
             <th>Id</th>
             <th>Title</th>
+            <th>Genre</th>
+            <th>MovieAdded</th>
+            <th>Photo</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -24,6 +29,13 @@
             <tr>
                 <td>@movie.Id</td>
                 <td>@movie.Title</td>
+                <td>@movie.Genre?.Name</td>
+                <td>@movie.MovieAdded</td>
+                <td><img src="@movie.photo" alt="photo" width="100" height="100" /></td>
+                <td>
+                    <a asp-controller="Movie" asp-action="Delete" asp-route-id="@movie.Id" class="btn btn-danger">Delete</a> | 
+                    <a asp-controller="Movie" asp-action="Edit" asp-route-id="@movie.Id" class="btn btn-success">Edit</a>
+                </td>
             </tr>
         }
     </tbody>

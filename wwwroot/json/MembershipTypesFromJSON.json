@@ -1,0 +1,15 @@
+[
+ {
+    "Id": 1,
+    "signupFee": 49.99,
+    "durationInMonths": 12,
+    "discountRate": 10.5
+  },
+  {
+    "Id": 2,
+    "signupFee": 29.99,
+    "durationInMonths": 6,
+    "discountRate": 5.0
+  }
+]
+  

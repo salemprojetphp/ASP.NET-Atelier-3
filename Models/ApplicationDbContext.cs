@@ -31,14 +31,48 @@ public class ApplicationDbContext : DbContext{
             .HasOne(mc => mc.Client)
             .WithMany(c => c.MovieClients)
             .HasForeignKey(mc => mc.ClientId);
-        
-        base.OnModelCreating(modelBuilder);
-        string GenresJSon=System.IO.File.ReadAllText("./Data/GenreFromJSon.json");
+
+        // Genre
+        string GenresJSon=System.IO.File.ReadAllText("./wwwroot/json/GenreFromJSon.json");
         List<Genre>? genres=System.Text.Json.JsonSerializer.Deserialize<List<Genre>>(GenresJSon);
         foreach(Genre g in genres)
         {
             modelBuilder.Entity<Genre>().HasData(g);
         }
+
+        // MembershipTypes 
+        string MembershipTypeJSON=System.IO.File.ReadAllText("./wwwroot/json/MembershipTypesFromJSON.json");
+        List<MembershipType>? MembershipTypes=System.Text.Json.JsonSerializer.Deserialize<List<MembershipType>>(MembershipTypeJSON);
+        foreach(MembershipType m in MembershipTypes)
+        {
+            modelBuilder.Entity<MembershipType>().HasData(m);
+        }
+
+        // MovieClients
+        string MovieClientsJSON=System.IO.File.ReadAllText("./wwwroot/json/MovieClientsFromJSON.json");
+        List<MovieClient>? MovieClients=System.Text.Json.JsonSerializer.Deserialize<List<MovieClient>>(MovieClientsJSON);
+        foreach(MovieClient mc in MovieClients)
+        {
+            modelBuilder.Entity<MovieClient>().HasData(mc);
+        }
+        
+        //Clients 
+        string ClientJSON=System.IO.File.ReadAllText("./wwwroot/json/ClientsFromJSON.json");
+        List<Client>? clients=System.Text.Json.JsonSerializer.Deserialize<List<Client>>(ClientJSON);
+        foreach(Client c in clients)
+        {
+            modelBuilder.Entity<Client>().HasData(c);
+        }
+
+        // Movies 
+        string MoviesJSON=System.IO.File.ReadAllText("./wwwroot/json/MoviesFromJSON.json");
+        List<Movie>? Movies=System.Text.Json.JsonSerializer.Deserialize<List<Movie>>(MoviesJSON);
+        foreach(Movie m in Movies)
+        {
+            modelBuilder.Entity<Movie>().HasData(m);
+        }
+
+        base.OnModelCreating(modelBuilder);
     }
     
 

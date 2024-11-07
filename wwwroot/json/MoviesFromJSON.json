@@ -1,0 +1,17 @@
+[
+      {
+        "Id": 1,
+        "Title": "Inception",
+        "MovieAdded": "2010-07-16T00:00:00",
+        "photo": "images/inception.jpg",
+        "GenreId": 1
+      },
+      {
+        "Id": 2,
+        "Title": "The Dark Knight",
+        "MovieAdded": "2008-07-18T00:00:00",
+        "photo": "images/dark_knight.jpg",
+        "GenreId": 2
+      }
+    ]
+  
